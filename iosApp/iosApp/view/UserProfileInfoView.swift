@@ -13,7 +13,7 @@ struct UserProfileInfoView: View {
         ZStack {
             Text("Hello, SwiftUI!")
         }
-        .frame(maxWidth: .infinity, maxHeight: 300)
+        .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
         .background(Color.red)
         .cornerRadius(16)
     }
