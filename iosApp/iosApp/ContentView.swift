@@ -22,6 +22,10 @@ struct ContentView: View {
 //                    }
 //                    .transition(.move(edge: .top).combined(with: .opacity))
 //                }
+                Text("User Profile")
+                    .font(.system(size: 36))
+                    .foregroundColor(.red)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 UserProfileInfoView()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -30,18 +34,6 @@ struct ContentView: View {
         
     }
 }
-
-struct UserProfileInfoView: View {
-    var body: some View {
-        ZStack {
-            Text("Hello, SwiftUI!")
-        }
-        .frame(maxWidth: .infinity, maxHeight: 300)
-        .background(Color.red)
-        .cornerRadius(16)
-    }
-}
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
