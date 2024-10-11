@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -24,22 +25,34 @@ fun UserProfileView(padding: Dp) {
         modifier = Modifier
             .fillMaxSize() // Fill the entire screen
             .background(Color.Black) // Set the background color to black
-            .padding(padding)
+            .padding(horizontal = padding)
+            .padding(top = 0.dp)
+            .padding(bottom = padding)
     ) {
-        Column(Modifier.fillMaxWidth()) {
-            Text(
-                text = "User Profile",
-                color = Color.Red,
-                fontSize = 36.sp // Use sp instead of dp for font size
-            )
-            Spacer(modifier = Modifier.height(36.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(300.dp)
-                    .background(Color.Red, shape = RoundedCornerShape(16.dp))
-                    .align(alignment = Alignment.CenterHorizontally)
-            )
+        LazyColumn(Modifier.fillMaxSize()) {
+            item {
+                Spacer(modifier = Modifier.height(36.dp))
+            }
+            item {
+                Text(
+                    text = "User Profile",
+                    color = Color.Red,
+                    fontSize = 36.sp // Use sp instead of dp for font size
+                )
+            }
+            item {
+                Spacer(modifier = Modifier.height(36.dp))
+            }
+            item {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(300.dp)
+                        .background(Color.Red, shape = RoundedCornerShape(16.dp))
+                        .align(alignment = Alignment.Center)
+                )
+            }
+
         }
     }
 }
